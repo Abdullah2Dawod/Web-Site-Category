@@ -1,0 +1,27 @@
+@extends('layout.admin')
+@section('content')
+
+
+<div class="btn-toolbar mb-2 mb-md-0">
+    <table class="table table-bordered">
+      <tbody>
+          <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th width="280px">Actions</th>
+          </tr>
+          @foreach($orders as $order)
+          <tr>
+              <td>{{$order->id}}</td>
+              <td>{{$order->name}}</td>
+              <td>
+                <a class="btn btn-secondary" href="{{url('deleted/order'.'/'.$order->id)}}">Deleted</a>
+              </td>
+          </tr>
+          @endforeach
+      </tbody>
+    </table>
+</div>
+
+
+@endsection
